@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal Akademik - Data Nilai Mahasiswa</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <h2 class="nav-title">Portal Akademik</h2>
+      <div class="nav-links">
+        <a href="index.html">Input Nilai</a>
+        <a href="lihat-data.html" class="active">Lihat Data Mahasiswa</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN SECTION -->
+  <main class="main-container">
+    <div class="table-box">
+      <h2 class="form-title">Data Nilai Mahasiswa</h2>
+      <hr>
+
+      <div class="table-responsive">
+        <table class="table-nilai">
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>Nama Lengkap</th>
+              <th>NIM</th>
+              <th>Mata Kuliah</th>
+              <th>Nilai</th>
+            </tr>
+          </thead>
+          <tbody id="isiTabel">
+            <!-- Data dari Firestore akan dimasukkan ke sini -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

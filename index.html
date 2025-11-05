@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal Akademik - Input Nilai Mahasiswa</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <h2 class="nav-title">Portal Akademik</h2>
+      <div class="nav-links">
+        <a href="index.html" class="active">Input Nilai</a>
+        <a href="lihat-data.html">Lihat Data Mahasiswa</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTAINER -->
+  <main class="main-container">
+    <div class="form-box">
+      <h2 class="form-title">Formulir Input Nilai</h2>
+      <hr />
+
+      <form id="nilaiForm">
+
+        <!-- NAMA -->
+        <label for="nama">Nama Lengkap</label>
+        <input type="text" id="nama" placeholder="Masukkan Nama Lengkap" required>
+
+        <!-- NIM -->
+        <label for="nim">NIM (Nomor Induk Mahasiswa)</label>
+        <input type="text" id="nim" placeholder="Contoh: 7012300" required>
+
+        <!-- MATA KULIAH -->
+        <label for="matkul">Mata Kuliah</label>
+        <select id="matkul" required>
+          <option value="">Pilih Mata Kuliah...</option>
+          <option value="MK001 - Rekayasa Perangkat Lunak">MK001 - Rekayasa Perangkat Lunak</option>
+          <option value="MK002 - Pemrograman Mobile">MK002 - Pemrograman Mobile</option>
+          <option value="MK003 - Manajemen Risiko">MK003 - Manajemen Risiko</option>
+          <option value="MK004 - Testing dan Implementasi System">MK004 - Testing dan Implementasi System</option>
+          <option value="MK005 - Multimedia">MK005 - Multimedia</option>
+          <option value="MK006 - Technopreneurship">MK006 - Technopreneurship</option>
+        </select>
+
+        <!-- NILAI -->
+        <label for="nilai">Nilai Mahasiswa</label>
+        <input type="number" id="nilai" step="0.1" placeholder="85.5" required>
+
+        <!-- BUTTON -->
+        <button type="button" id="btnSimpan" class="btn-primary">Simpan Data</button>
+      </form>
+    </div>
+  </main>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
