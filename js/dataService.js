@@ -1,23 +1,45 @@
+// Import koneksi database dari file firebaseConfig.js
 import { db } from "./firebaseConfig.js";
-import { collection, doc, setDoc, getDocs } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-firestore.js";
 
+// Import fungsi-fungsi yang dibutuhkan dari Firebase Firestore
+import { collection, doc, setDoc, getDocs } 
+  from "https://www.gstatic.com/firebasejs/10.13.1/firebase-firestore.js";
+
+// Buat referensi ke koleksi "mahasiswa" di database Firebase
+// Koleksi ini seperti "folder" tempat semua data mahasiswa disimpan
 const colRef = collection(db, "mahasiswa");
 
-// 🔹 CREATE or UPDATE data (ID = NIM)
+// ====================
+// 🔹 Fungsi untuk MENYIMPAN atau MEMPERBARUI data ke Firebase
+// ====================
 export async function createData(nim, nama, matkul, nilai) {
   try {
-    const docRef = doc(colRef, nim); // gunakan NIM sebagai ID dokumen
+    // Gunakan NIM sebagai ID dokumen, supaya data mahasiswa tidak ganda
+    const docRef = doc(colRef, nim);
+
+    // Simpan data ke Firebase (jika NIM sudah ada, datanya diperbarui)
     await setDoc(docRef, { nim, nama, matkul, nilai });
+
+    // Tampilkan pesan di console kalau berhasil
     console.log("Data berhasil disimpan untuk NIM:", nim);
   } catch (error) {
+    // Kalau ada kesalahan saat menyimpan, tampilkan di console
     console.error("Gagal menyimpan data:", error);
   }
 }
 
-// 🔹 READ all data
+// ====================
+// 🔹 Fungsi untuk MEMBACA SEMUA data mahasiswa dari Firebase
+// ====================
 export async function readData() {
-  const data = [];
+  const data = []; // Buat array kosong untuk menampung hasil data
+
+  // Ambil semua data dari koleksi "mahasiswa"
   const querySnapshot = await getDocs(colRef);
+
+  // Ulangi setiap dokumen yang diambil dan masukkan ke array "data"
   querySnapshot.forEach((doc) => data.push(doc.data()));
+
+  // Kembalikan hasil data agar bisa ditampilkan di halaman web
   return data;
 }

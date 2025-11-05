@@ -1,74 +1,87 @@
-/* RESET */
+/* ===============================
+   RESET DASAR UNTUK SEMUA ELEMEN
+   =============================== */
+/* Supaya semua elemen mulai dari gaya yang sama */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  margin: 0;                 /* Hilangkan jarak luar (margin) default */
+  padding: 0;                /* Hilangkan jarak dalam (padding) default */
+  box-sizing: border-box;    /* Hitung ukuran elemen secara akurat */
+  font-family: "Poppins", sans-serif; /* Gunakan font Poppins untuk tampilan modern */
 }
 
-/* NAVBAR */
+/* ===============================
+   BAGIAN NAVBAR / MENU ATAS
+   =============================== */
 .navbar {
-  width: 100%;
-  background-color: #fff;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-  padding: 15px 40px;
-  position: sticky;
+  width: 100%;                          /* Lebar penuh di layar */
+  background-color: #fff;               /* Warna putih untuk latar */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08); /* Bayangan halus di bawah navbar */
+  padding: 15px 40px;                   /* Jarak dalam navbar */
+  position: sticky;                     /* Navbar menempel di atas saat discroll */
   top: 0;
-  z-index: 10;
+  z-index: 10;                          /* Biar tampil di atas elemen lain */
 }
 
 .nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
+  display: flex;                        /* Susun isi navbar secara sejajar (horizontal) */
+  justify-content: space-between;       /* Judul di kiri, menu di kanan */
+  align-items: center;                  /* Rata tengah secara vertikal */
+  max-width: 1200px;                    /* Lebar maksimal navbar */
+  margin: 0 auto;                       /* Posisi tengah di layar */
 }
 
 .nav-title {
   font-size: 1.3rem;
   font-weight: 600;
-  color: #111;
+  color: #111;                          /* Warna teks hitam keabu-abuan */
 }
 
+/* Link navigasi (menu kanan) */
 .nav-links a {
-  text-decoration: none;
+  text-decoration: none;                /* Hilangkan garis bawah */
   color: #444;
-  margin-left: 20px;
+  margin-left: 20px;                    /* Jarak antar menu */
   font-weight: 500;
-  transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out;   /* Efek halus saat hover */
 }
 
+/* Warna berubah saat mouse diarahkan */
 .nav-links a:hover {
   color: #0056d2;
 }
 
+/* Warna khusus untuk menu aktif */
 .nav-links .active {
   color: #0056d2;
   font-weight: 600;
 }
 
-/* BODY */
+/* ===============================
+   LATAR DAN TATA LETAK UTAMA HALAMAN
+   =============================== */
 body {
-  background-color: #f7f9fc;
-  min-height: 100vh;
+  background-color: #f7f9fc;   /* Warna abu muda lembut */
+  min-height: 100vh;           /* Tinggi minimal satu layar penuh */
 }
 
-/* MAIN CONTENT */
+/* Kontainer utama untuk isi halaman */
 .main-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: calc(100vh - 80px);
+  justify-content: center;     /* Tengah secara horizontal */
+  align-items: center;         /* Tengah secara vertikal */
+  min-height: calc(100vh - 80px); /* Menyesuaikan tinggi agar tidak tertutup navbar */
   padding: 20px;
 }
 
+/* ===============================
+   KOTAK FORM INPUT NILAI
+   =============================== */
 .form-box {
-  background-color: #fff;
-  padding: 40px 50px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  width: 420px;
+  background-color: #fff;      /* Latar putih */
+  padding: 40px 50px;          /* Ruang dalam */
+  border-radius: 10px;         /* Sudut membulat */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Bayangan lembut */
+  width: 420px;                /* Lebar form */
 }
 
 .form-title {
@@ -79,13 +92,16 @@ body {
   margin-bottom: 15px;
 }
 
+/* Garis pemisah antara judul dan form */
 hr {
   margin-bottom: 25px;
   border: none;
   border-top: 1.5px solid #eee;
 }
 
-/* FORM ELEMENTS */
+/* ===============================
+   BAGIAN FORM INPUT DAN SELECT
+   =============================== */
 form label {
   display: block;
   margin-bottom: 6px;
@@ -96,7 +112,7 @@ form label {
 
 form input,
 form select {
-  width: 100%;
+  width: 100%;                 /* Input lebar penuh */
   padding: 10px 12px;
   margin-bottom: 18px;
   border-radius: 6px;
@@ -105,18 +121,21 @@ form select {
   transition: 0.2s;
 }
 
+/* Efek saat kolom difokuskan */
 form input:focus,
 form select:focus {
   outline: none;
-  border-color: #0056d2;
-  box-shadow: 0 0 0 3px rgba(0, 86, 210, 0.1);
+  border-color: #0056d2;       /* Warna biru saat aktif */
+  box-shadow: 0 0 0 3px rgba(0, 86, 210, 0.1); /* Efek cahaya lembut */
 }
 
-/* BUTTON */
+/* ===============================
+   TOMBOL SIMPAN
+   =============================== */
 .btn-primary {
   width: 100%;
   padding: 12px;
-  background-color: #004fc5;
+  background-color: #004fc5;   /* Warna biru utama */
   color: white;
   font-size: 1rem;
   border: none;
@@ -126,10 +145,12 @@ form select:focus {
 }
 
 .btn-primary:hover {
-  background-color: #003ea1;
+  background-color: #003ea1;   /* Warna sedikit lebih gelap saat hover */
 }
 
-/* TABLE PAGE */
+/* ===============================
+   HALAMAN TABEL NILAI MAHASISWA
+   =============================== */
 .table-box {
   background-color: #fff;
   padding: 40px 50px;
@@ -147,19 +168,21 @@ form select:focus {
   margin-bottom: 15px;
 }
 
+/* TABEL DATA NILAI */
 .table-nilai {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: collapse;   /* Hilangkan jarak antar garis */
   margin-top: 10px;
   font-size: 0.95rem;
   color: #333;
 }
 
 .table-nilai thead {
-  background-color: #f2f4f8;
+  background-color: #f2f4f8;   /* Latar abu muda untuk header */
   font-weight: 600;
 }
 
+/* Gaya tiap sel tabel */
 .table-nilai th,
 .table-nilai td {
   border: 1px solid #e2e6ea;
@@ -167,10 +190,12 @@ form select:focus {
   text-align: center;
 }
 
+/* Warna bergantian antar baris */
 .table-nilai tr:nth-child(even) {
   background-color: #fafbfc;
 }
 
+/* Efek saat baris diarahkan kursor */
 .table-nilai tr:hover {
   background-color: #f0f6ff;
 }
