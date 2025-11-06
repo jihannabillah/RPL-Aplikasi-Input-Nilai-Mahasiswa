@@ -199,3 +199,62 @@ form select:focus {
 .table-nilai tr:hover {
   background-color: #f0f6ff;
 }
+
+/* ===============================
+   RESPONSIVE UNTUK TAMPILAN HP
+   =============================== */
+@media (max-width: 768px) {
+
+  /* Navbar jadi dua baris agar muat di layar HP */
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+  }
+
+  .nav-links {
+    margin-top: 8px;
+  }
+
+  .nav-links a {
+    display: inline-block;
+    margin: 5px 10px 0 0;
+    font-size: 0.9rem;
+  }
+
+  /* Form dan tabel agar menyesuaikan lebar layar */
+  .form-box,
+  .table-box {
+    width: 100%;
+    max-width: 95%;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Input, select, dan tombol agar nyaman di HP */
+  form input,
+  form select,
+  .btn-primary {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  /* Tabel biar bisa di-scroll horizontal */
+  .table-nilai {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .table-nilai th,
+  .table-nilai td {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  /* Agar isi halaman tidak terlalu rapat ke pinggir layar */
+  .main-container {
+    padding: 10px;
+  }
+}
+
